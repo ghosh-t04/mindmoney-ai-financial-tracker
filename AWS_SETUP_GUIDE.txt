@@ -1,0 +1,188 @@
+MINDMONEY AWS ACCOUNT SETUP GUIDE
+=====================================
+
+This guide will walk you through setting up your AWS account and configuring it for the MindMoney deployment.
+
+STEP 1: AWS ACCOUNT SETUP
+=========================
+
+1. Go to https://aws.amazon.com/
+2. Click "Create an AWS Account" (if you don't have one)
+3. Follow the signup process:
+   - Enter email and password
+   - Choose account name (e.g., "MindMoney")
+   - Choose account type: Personal or Business
+   - Enter contact information
+   - Enter payment information (credit card required)
+   - Verify phone number
+   - Choose support plan (Basic is free)
+
+STEP 2: CREATE IAM USER
+=======================
+
+1. Sign in to AWS Console
+2. Go to IAM (Identity and Access Management)
+   - Search "IAM" in the top search bar
+   - Click on IAM service
+
+3. Create a new user:
+   - Click "Users" in the left sidebar
+   - Click "Create user"
+   - Enter username: "mindmoney-deployer"
+   - Click "Next"
+
+4. Set permissions:
+   - Select "Attach policies directly"
+   - Search and select these policies:
+     * CloudFormationFullAccess
+     * LambdaFullAccess
+     * IAMFullAccess
+     * RDSFullAccess
+     * APIGatewayFullAccess
+     * EC2FullAccess
+     * VPCFullAccess
+     * S3FullAccess
+   - Click "Next"
+   - Click "Create user"
+
+STEP 3: CREATE ACCESS KEYS
+==========================
+
+1. Click on your newly created user "mindmoney-deployer"
+2. Go to "Security credentials" tab
+3. Scroll down to "Access keys" section
+4. Click "Create access key"
+5. Choose "Command Line Interface (CLI)"
+6. Check the confirmation box
+7. Click "Next"
+8. Add description: "MindMoney deployment access"
+9. Click "Create access key"
+10. IMPORTANT: Copy both values:
+    - Access Key ID
+    - Secret Access Key
+11. Click "Download .csv file" to save them securely
+12. Click "Done"
+
+STEP 4: CONFIGURE AWS CLI ON YOUR COMPUTER
+==========================================
+
+1. Open PowerShell as Administrator
+2. Run the configuration command:
+   aws configure
+
+3. Enter the following when prompted:
+   AWS Access Key ID: [paste your Access Key ID]
+   AWS Secret Access Key: [paste your Secret Access Key]
+   Default region name: us-east-1
+   Default output format: json
+
+4. Test your configuration:
+   aws sts get-caller-identity
+
+   This should return your account information if successful.
+
+STEP 5: SET UP BILLING ALERTS (RECOMMENDED)
+===========================================
+
+1. Go to AWS Billing Dashboard
+2. Click "Billing preferences"
+3. Enable "Receive Billing Alerts"
+4. Go to CloudWatch → Alarms → Billing
+5. Create billing alarm for $10, $25, $50 (your choice)
+
+STEP 6: VERIFY REQUIRED SERVICES
+================================
+
+Make sure these services are available in your region (us-east-1):
+- CloudFormation
+- Lambda
+- RDS
+- API Gateway
+- IAM
+- VPC
+- EC2
+
+STEP 7: RUN THE DEPLOYMENT
+==========================
+
+1. Navigate to your project directory:
+   cd C:\OneDrive\Desktop\projects\mindmoney
+
+2. Run the deployment script:
+   .\scripts\deploy.ps1
+
+3. The script will:
+   - Check prerequisites
+   - Deploy CloudFormation stack
+   - Deploy Lambda function
+   - Create environment file
+
+STEP 8: POST-DEPLOYMENT TASKS
+=============================
+
+After successful deployment:
+
+1. Initialize the database:
+   - Connect to your RDS instance
+   - Run the schema.sql file
+
+2. Test your API endpoints
+
+3. Set up monitoring and logging
+
+4. Configure custom domain (if needed)
+
+TROUBLESHOOTING
+===============
+
+Common Issues:
+
+1. "InvalidClientTokenId" error:
+   - Your AWS credentials are wrong or expired
+   - Run "aws configure" again with correct credentials
+
+2. "Access Denied" errors:
+   - Your IAM user doesn't have required permissions
+   - Add the missing policies to your user
+
+3. "Region not supported" errors:
+   - Some services might not be available in your chosen region
+   - Try us-east-1 or us-west-2
+
+4. Billing issues:
+   - Check your AWS billing dashboard
+   - Set up billing alerts to avoid unexpected charges
+
+SECURITY BEST PRACTICES
+=======================
+
+1. Never share your AWS credentials
+2. Use IAM roles when possible instead of access keys
+3. Enable MFA on your root account
+4. Regularly rotate access keys
+5. Use least privilege principle for IAM policies
+6. Monitor your AWS usage and costs
+
+COST ESTIMATION
+===============
+
+Expected monthly costs for MindMoney (approximate):
+- RDS (t3.micro): ~$15/month
+- Lambda: ~$1-5/month (depending on usage)
+- API Gateway: ~$3-10/month (depending on requests)
+- CloudFormation: Free
+- Total: ~$20-30/month
+
+Note: Costs may vary based on usage and region.
+
+SUPPORT
+=======
+
+If you encounter issues:
+1. Check AWS documentation
+2. Review AWS CloudFormation events in the console
+3. Check CloudWatch logs for Lambda functions
+4. Verify IAM permissions
+5. Check AWS service status page
+
+Remember to always keep your AWS credentials secure and never commit them to version control!

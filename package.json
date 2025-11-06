@@ -1,0 +1,53 @@
+{
+  "name": "mindmoney",
+  "version": "1.0.0",
+  "description": "AI-powered finance tracker with AWS integration",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@aws-amplify/ui-react": "^6.0.0",
+    "@aws-sdk/client-cognito-identity-provider": "^3.450.0",
+    "@aws-sdk/client-dynamodb": "^3.450.0",
+    "@aws-sdk/client-lambda": "^3.450.0",
+    "@aws-sdk/lib-dynamodb": "^3.450.0",
+    "@google/generative-ai": "^0.24.1",
+    "@headlessui/react": "^1.7.17",
+    "@heroicons/react": "^2.0.18",
+    "autoprefixer": "^10.4.16",
+    "aws-amplify": "^6.0.0",
+    "axios": "^1.6.0",
+    "date-fns": "^2.30.0",
+    "framer-motion": "^10.16.4",
+    "next": "^14.0.0",
+    "postcss": "^8.4.31",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.47.0",
+    "react-hot-toast": "^2.4.1",
+    "recharts": "^2.8.0",
+    "tailwindcss": "^3.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "eslint": "^8.52.0",
+    "eslint-config-next": "^14.0.0",
+    "typescript": "^5.2.0"
+  },
+  "keywords": [
+    "finance",
+    "tracker",
+    "ai",
+    "aws",
+    "react",
+    "nextjs"
+  ],
+  "author": "MindMoney Team",
+  "license": "MIT"
+}

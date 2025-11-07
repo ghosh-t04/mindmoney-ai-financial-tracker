@@ -2,7 +2,7 @@
 
 A comprehensive, modern finance tracking application powered by AI and built with Next.js, AWS services, and Ollama LLM integration.
 
-## 🚀 Features
+##  Features
 
 - **User Authentication**: Secure signup/login with AWS Cognito
 - **AI-Powered Quiz**: Multiple-choice quiz to analyze spending habits
@@ -13,7 +13,7 @@ A comprehensive, modern finance tracking application powered by AI and built wit
 - **Responsive Design**: Modern, mobile-friendly interface
 - **AWS Integration**: Complete cloud infrastructure
 
-## 🏗️ Architecture
+##  Architecture
 
 ### Frontend
 - **Next.js 14** with App Router
@@ -35,14 +35,14 @@ A comprehensive, modern finance tracking application powered by AI and built wit
 - **LLaMA 2** model for financial analysis
 - Real-time chat and insights generation
 
-## 📋 Prerequisites
+##  Prerequisites
 
 - Node.js 18+ and npm
 - AWS CLI configured with appropriate permissions
 - Docker (for local Ollama development)
 - Git
 
-## 🛠️ Installation & Setup
+##  Installation & Setup
 
 ### 1. Clone the Repository
 ```bash
@@ -95,7 +95,7 @@ The deployment script creates `.env.local` with the necessary AWS configuration.
 npm run dev
 ```
 
-## 🏢 AWS Services Used
+##  AWS Services Used
 
 | Service | Purpose |
 |---------|---------|
@@ -109,7 +109,7 @@ npm run dev
 | **VPC** | Network isolation and security |
 | **IAM** | Access control and permissions |
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 mindmoney/
@@ -135,7 +135,7 @@ mindmoney/
 └── public/               # Static assets
 ```
 
-## 🔧 Configuration
+##  Configuration
 
 ### Environment Variables
 ```env
@@ -163,7 +163,7 @@ The deployment requires the following AWS permissions:
 - S3 (create buckets and manage objects)
 - CloudFront (create distributions)
 
-## 🚀 Deployment
+##  Deployment
 
 ### Development Environment
 ```bash
@@ -185,7 +185,7 @@ npm start
 .\scripts\deploy.ps1 -Environment prod
 ```
 
-## 📊 Database Schema
+##  Database Schema
 
 The application uses MySQL with the following main tables:
 - `users` - User information
@@ -195,7 +195,7 @@ The application uses MySQL with the following main tables:
 - `chat_messages` - AI chat history
 - `daily_analysis` - AI-generated insights
 
-## 🤖 AI Features
+##  AI Features
 
 ### Quiz Analysis
 - Analyzes user spending habits from quiz responses
@@ -214,7 +214,7 @@ The application uses MySQL with the following main tables:
 - Context-aware responses based on user data
 - Personalized financial advice
 
-## 🔒 Security
+##  Security
 
 - JWT-based authentication with AWS Cognito
 - VPC isolation for backend services
@@ -222,7 +222,7 @@ The application uses MySQL with the following main tables:
 - CORS configuration for API endpoints
 - Input validation and sanitization
 
-## 📱 Responsive Design
+##  Responsive Design
 
 The application is fully responsive and works on:
 - Desktop computers
@@ -230,7 +230,7 @@ The application is fully responsive and works on:
 - Mobile phones
 - Progressive Web App (PWA) capabilities
 
-## 🧪 Testing
+##  Testing
 
 ```bash
 # Run linting
@@ -243,7 +243,7 @@ npx tsc --noEmit
 npm test
 ```
 
-## 🚀 Performance
+##  Performance
 
 - Server-side rendering with Next.js
 - Image optimization
@@ -251,7 +251,7 @@ npm test
 - CDN distribution with CloudFront
 - Database query optimization
 
-## 📈 Monitoring
+##  Monitoring
 
 Recommended monitoring setup:
 - CloudWatch for AWS services
@@ -259,7 +259,7 @@ Recommended monitoring setup:
 - Error tracking and logging
 - User analytics
 
-## 🤝 Contributing
+##  Contributing
 
 1. Fork the repository
 2. Create a feature branch
@@ -267,18 +267,18 @@ Recommended monitoring setup:
 4. Add tests if applicable
 5. Submit a pull request
 
-## 📄 License
+##  License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## 🆘 Support
+##  Support
 
 For support and questions:
 - Create an issue in the repository
 - Check the documentation
 - Review AWS service documentation
 
-## 🔮 Future Enhancements
+##  Future Enhancements
 
 - [ ] Mobile app (React Native)
 - [ ] Advanced analytics and reporting
